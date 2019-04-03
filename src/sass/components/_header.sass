@@ -1,0 +1,49 @@
+.header
+  z-index: 1
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+
+  width: 100%
+  padding-top: 24px
+  padding-bottom: 24px
+
+  +obj(m)
+  font-size: 15px
+  
+
+// Text color
+.header
+  color: #fff
+.header a
+  +link(#fff)
+
+// Dark text color
+.header--dark
+  color: $base-text-color
+
+.header--dark a
+  +link($base-text-color)
+  
+
+// Logo
+.header__logo
+  width: 170px
+  height: 56px
+
+.header__logo img
+  display: block
+  max-width: 100%
+  height: auto
+
+
+// Burger
+.header .hamburger
+  margin-left: 4.6%
+
+
+// List
+.header__list li
+  margin-left: 48px
+

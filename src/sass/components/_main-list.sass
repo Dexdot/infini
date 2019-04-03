@@ -1,0 +1,71 @@
+.main-list
+  width: 100%
+  height: 100%
+  padding-top: calc(#{$header-h} - 1px)
+
+  color: #fff
+
+
+// List item
+.main-list li
+  position: relative
+  
+  width: 33.3333%
+  height: 100%
+  border-top: 1px solid #5D85E2
+
+
+// Border
+.main-list li:not(:last-child)::before
+  content: ''
+  position: absolute
+  top: 0
+  bottom: 0
+  right: 0
+
+  width: 1px
+  height: 100%
+  background: #5D85E2
+
+
+// Cover
+.main-list .cover
+  background: $blue-s
+  transform: translateY(calc(-1 * #{$header-h}))
+  height: calc(100% + #{$header-h})
+
+
+// Num
+.main-list__num
+  display: block
+  margin-bottom: 16px
+
+
+// Title
+.main-list__title
+  margin-bottom: 1em
+
+
+// Content
+.main-list__content
+  padding-top: 16%
+  padding-left: $unit
+  padding-right: $unit
+
+  height: 70%
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  
+
+// Image
+.main-list__content img
+  margin-top: auto
+  margin-left: auto
+  margin-right: auto
+
+  display: block
+  max-width: 100%
+  width: 90%
+  height: auto
+

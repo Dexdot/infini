@@ -1,0 +1,27 @@
+.about
+  // max-width: 960px
+  max-width: 50%
+
+  position: absolute
+  z-index: 1
+  bottom: 0
+  left: 0
+
+  color: #fff
+  font-size: 16px
+  line-height: 1.5
+
+.about__title
+  background: $blue-m
+  width: 35%
+  +obj(b)
+  +yo('font-size', (1300px: 48px, 1920px: 64px, 2550px: 72px))
+
+.about__text
+  width: 65%
+  padding: 5% 6.7%
+  background: $blue-b
+
+.about__text p
+  margin-bottom: 24px
+
