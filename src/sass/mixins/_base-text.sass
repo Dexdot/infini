@@ -1,5 +1,8 @@
-=base-text
-  +yo('font-size', (1300px: 16px, 1920px: 20px, 2550px: 22px))
+=base-text($sm: false)
+  @if ($sm == true)
+    +yo('font-size', (1300px: 14px, 1920px: 15px, 2550px: 17px))
+  @else
+    +yo('font-size', (1300px: 16px, 1920px: 20px, 2550px: 22px))
 
 
 
