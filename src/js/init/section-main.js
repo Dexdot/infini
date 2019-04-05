@@ -8,15 +8,58 @@ const options = {
 
 // Element
 const el = $.qs('.section[data-section="main"]');
+const list = $.qs('.main-list', el);
 
-// Show
+/* Show */
 const show = resolve => {
-  resolve();
+  // Reset
+  el.style = '';
+  list.classList.remove('stroke-visible');
+
+  // Timeline settings
+  const tl = anime.timeline({
+    ...options,
+    complete: () => {
+      list.classList.add('stroke-visible');
+      resolve();
+    }
+  });
+
+  // Timeline
+  tl.add({
+    targets: $.qsa('.cover', el),
+    duration: 800,
+    delay: anime.stagger(100),
+    translateY: ['101%', '0%']
+  })
+    .add(
+      {
+        targets: $.qs('.about', el),
+        duration: 800,
+        translateY: ['101%', '0%']
+      },
+      '-=400'
+    )
+    .add(
+      {
+        targets: $.qsa('.main-list__content', list),
+        duration: 400,
+        delay: anime.stagger(50),
+        opacity: [0, 1]
+      },
+      '-=400'
+    );
 };
 
-// Hide
+/* Hide */
 const hide = showNext => {
-  showNext();
+  anime({
+    targets: el,
+    duration: 800,
+    easing: 'cubicBezier(.16,.84,.44,1)',
+    translateY: '-100vh',
+    complete: showNext
+  });
 };
 
 // Section instance

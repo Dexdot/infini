@@ -5,6 +5,16 @@
 
   color: #fff
 
+.main-list:not(.stroke-visible) li
+  border-top: 1px solid transparent
+  &::before
+    opacity: 0
+
+.main-list.stroke-visible li
+  border-top: 1px solid $blue-m
+  &::before
+    opacity: 1
+
 
 // List item
 .main-list li
@@ -12,7 +22,8 @@
   
   width: 33.3333%
   height: 100%
-  border-top: 1px solid #5D85E2
+
+  transition: $trs
 
 
 // Border
@@ -25,7 +36,9 @@
 
   width: 1px
   height: 100%
-  background: #5D85E2
+
+  background: $blue-m
+  transition: $trs
 
 
 // Cover

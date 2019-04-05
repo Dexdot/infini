@@ -27,10 +27,20 @@ export default class Scroll {
     this.index = 0;
     this.animating = false;
 
-    this.setup();
+    window.addEventListener('DOMContentLoaded', () => {
+      this.setup();
+    });
   }
 
   setup() {
+    // Set body class
+    $.qs('body').classList.add(
+      `page-${this.sections[this.index].el.dataset.section}`
+    );
+
+    // Show first section
+    this.afterHide(this.index);
+
     // Scroll handler
     this.scroll = new WheelIndicator({
       elem: $.qs('body'),
@@ -52,27 +62,31 @@ export default class Scroll {
 
   afterHide(i) {
     this.index = i;
+    $.removeClassStartingWith($.qs('body'), 'page-');
+    $.qs('body').classList.add(
+      `page-${this.sections[this.index].el.dataset.section}`
+    );
     this.show();
   }
 
   prev() {
     this.animating = true;
     this.hide(() => {
-      this.afterHide(this.index - 1)
+      this.afterHide(this.index - 1);
     });
   }
 
   next() {
     this.animating = true;
     this.hide(() => {
-      this.afterHide(this.index + 1)
+      this.afterHide(this.index + 1);
     });
   }
 
   showByIndex(i) {
     this.animating = true;
     this.hide(() => {
-      this.afterHide(i)
+      this.afterHide(i);
     });
   }
 

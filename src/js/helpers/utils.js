@@ -33,3 +33,10 @@ export const each = (selector, cb) => {
     cb(el, i);
   });
 };
+
+export const removeClassStartingWith = (el, text) => {
+  const match = (
+    el.className.match(new RegExp(`\\S*${text}\\S*`, 'g')) || []
+  ).join(' ');
+  if (match) el.classList.remove(match);
+};

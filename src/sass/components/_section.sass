@@ -6,12 +6,14 @@
   width: 100%
   height: 100%
 
-.section
+.section:not(:first-child)
   visibility: hidden
+
+.section
   pointer-events: none
 
 .section.active
-  visibility: visible
+  // visibility: visible
   pointer-events: auto
 
 
