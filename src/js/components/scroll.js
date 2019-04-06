@@ -27,9 +27,7 @@ export default class Scroll {
     this.index = 0;
     this.animating = false;
 
-    window.addEventListener('DOMContentLoaded', () => {
-      this.setup();
-    });
+    this.setup();
   }
 
   setup() {
@@ -94,17 +92,18 @@ export default class Scroll {
     this.animating = false;
   }
 
-  onScroll({ direction }) {
-    if (this.animating) return false;
+  onScroll(e) {
+    const map = $.qs('.js-map');
+    const path = e.path || (e.composedPath && e.composedPath());
+    
+    if (path.indexOf(map) > 0 || this.animating) return false;
 
-    if (direction === 'up' && this.index > 0) {
+    if (e.direction === 'up' && this.index > 0) {
       this.prev();
     }
 
-    if (direction === 'down' && this.index !== this.DOM.sections.length - 1) {
+    if (e.direction === 'down' && this.index !== this.DOM.sections.length - 1) {
       this.next();
     }
   }
 }
-
-const scroll = new Scroll();

@@ -57,7 +57,7 @@
 <header class="header">
   <div class="container u-w100">
     <div class="u-flex u-aic">
-      <button class="header__logo">
+      <button class="header__logo js-link" data-section="main">
         <img src="img/logo.svg" alt="Логотип Infini" />
       </button>
 
@@ -118,38 +118,46 @@
 <!-- Menu -->
 <section class="menu">
   <div class="menu__header u-flex u-aic">
-    <button class="btn btn--stroke">Связаться с нами</button>
+    <button class="btn btn--stroke js-link" data-section="contacts">
+      Связаться с нами
+    </button>
     <a href="tel:+77273172599">+7 (727) 317-25-99</a>
   </div>
 
   <nav class="menu__nav">
     <ul>
       <li>
-        <a href="/">
+        <button class="js-link" data-section="main">
           <h2 class="u-h2">О компании</h2>
-        </a>
+        </button>
       </li>
       <li>
-        <a href="/">
+        <button class="js-link" data-section="advantages">
           <h2 class="u-h2">Преимущества</h2>
-        </a>
+        </button>
       </li>
       <li>
-        <a href="/">
+        <button class="js-link" data-section="contacts">
           <h2 class="u-h2">Контакты</h2>
-        </a>
+        </button>
       </li>
     </ul>
 
     <ul>
       <li>
-        <a href="/">Сладости</a>
+        <button class="js-link" data-section="sweets">
+          Сладости
+        </button>
       </li>
       <li>
-        <a href="/">Игрушки, игрoвыe пристaвки и игры</a>
+        <button class="js-link" data-section="toys">
+          Игрушки, игрoвыe пристaвки и игры
+        </button>
       </li>
       <li>
-        <a href="/">Витринное оборудование</a>
+        <button class="js-link" data-section="showcases">
+          Витринное оборудование
+        </button>
       </li>
     </ul>
   </nav>
@@ -209,7 +217,7 @@
           oбoрудoвaния для слaдoстeй. Мы работаем на рынке Казахстана уже более
           10 лет.
         </p>
-        <button class="arrow-btn u-flex u-aic">
+        <button class="arrow-btn u-flex u-aic js-link" data-section="sweets">
           <svg class="i-arrow">
             <use xlink:href="#i-arrow" />
           </svg>
@@ -321,7 +329,9 @@
           нaхoдим рeшeния, oт кoтoрых выигрывaют oбe стoрoны. Имeннo к тaкoму
           взaимoдeйствию мы приглaшaeм свoих пaртнeрoв и клиeнтoв.
         </p>
-        <button class="btn btn--shadow">Связаться с нами</button>
+        <button class="btn btn--shadow js-link" data-section="contacts">
+          Связаться с нами
+        </button>
       </div>
     </article>
 
@@ -390,7 +400,9 @@
           Более 300 партнеров, более 1000 точек реализации во всех регионах
           Казахстана.
         </p>
-        <button class="btn btn--shadow">Связаться с нами</button>
+        <button class="btn btn--shadow js-link" data-section="contacts">
+          Связаться с нами
+        </button>
       </div>
     </article>
 
