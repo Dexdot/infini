@@ -57,9 +57,9 @@
 <header class="header">
   <div class="container u-w100">
     <div class="u-flex u-aic">
-      <a href="/index.html" class="header__logo">
+      <button class="header__logo">
         <img src="img/logo.svg" alt="Логотип Infini" />
-      </a>
+      </button>
 
       <ul class="header__list u-mla u-flex u-aic">
         <li>г.Алматы, ул. Качалова, 14</li>
@@ -196,19 +196,26 @@
   </ul>
 
   <section class="about u-flex">
-    <div class="about__title u-center">Infini</div>
+    <div class="about__title u-center">
+      <div class="about__bg"></div>
+      <div class="about__content">Infini</div>
+    </div>
     <div class="about__text">
-      <p>
-        Кoмпaния «Infini» - oптoвый пoстaвщик слaдoстей из рaзличных угoлкoв
-        мирa, игрушек, игрoвых пристaвок и игр, a тaк жe витринного oбoрудoвaния
-        для слaдoстeй. Мы работаем на рынке Казахстана уже более 10 лет.
-      </p>
-      <button class="arrow-btn u-flex u-aic">
-        <svg class="i-arrow">
-          <use xlink:href="#i-arrow" />
-        </svg>
-        Подробнее о компании
-      </button>
+      <div class="about__bg"></div>
+      <div class="about__content">
+        <p>
+          Кoмпaния «Infini» - oптoвый пoстaвщик слaдoстей из рaзличных угoлкoв
+          мирa, игрушек, игрoвых пристaвок и игр, a тaк жe витринного
+          oбoрудoвaния для слaдoстeй. Мы работаем на рынке Казахстана уже более
+          10 лет.
+        </p>
+        <button class="arrow-btn u-flex u-aic">
+          <svg class="i-arrow">
+            <use xlink:href="#i-arrow" />
+          </svg>
+          Подробнее о компании
+        </button>
+      </div>
     </div>
   </section>
 </section>
@@ -233,7 +240,9 @@
     </article>
 
     <div class="section-text__video video">
-      <video src="img/sweets.mp4" loop muted autoplay playsinline></video>
+      <div class="video__inner">
+        <video src="img/sweets.mp4" loop muted autoplay playsinline></video>
+      </div>
     </div>
   </div>
 </section>
@@ -241,7 +250,9 @@
   <section class="section" data-section="toys">
   <div class="section-text section-text--blue u-flex">
     <div class="section-text__video video">
-      <video src="img/toys.mp4" loop muted autoplay playsinline></video>
+      <div class="video__inner">
+        <video src="img/toys.mp4" loop muted autoplay playsinline></video>
+      </div>
     </div>
 
     <article class="section-text__content">
@@ -285,7 +296,9 @@
       </div>
     </article>
     <div class="section-text__video video">
-      <video src="img/showcases.mp4" loop muted autoplay playsinline></video>
+      <div class="video__inner">
+        <video src="img/showcases.mp4" loop muted autoplay playsinline></video>
+      </div>
     </div>
   </div>
 </section>
@@ -447,12 +460,8 @@
               <li>
                 <b>Наш адрес:</b>
               </li>
-              <li>
-                050061
-              </li>
-              <li>
-                ул. Качалова, 14
-              </li>
+              <li>Казахстан, А01Р5В0,</li>
+              <li>г. Алматы ул. качалова, 14</li>
             </ul>
           </li>
           <li>
@@ -460,15 +469,8 @@
               <li>
                 <b>Наши телефоны:</b>
               </li>
-              <li>
-                +77273172599
-              </li>
-              <li>
-                +77051814018
-              </li>
-              <li>
-                +77012654533
-              </li>
+              <li>+77273172599</li>
+              <li>+77273812641</li>
             </ul>
           </li>
           <li>

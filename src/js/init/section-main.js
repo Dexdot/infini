@@ -14,7 +14,6 @@ const list = $.qs('.main-list', el);
 const show = resolve => {
   // Reset
   el.style = '';
-  list.classList.remove('stroke-visible');
 
   // Timeline settings
   const tl = anime.timeline({
@@ -34,25 +33,42 @@ const show = resolve => {
   })
     .add(
       {
-        targets: $.qs('.about', el),
-        duration: 800,
+        easing: 'cubicBezier(.31,0,0,1.01)',
+        targets: '.about__bg',
+        duration: 600,
+        delay: anime.stagger(100),
         translateY: ['101%', '0%']
       },
-      '-=400'
+      '-=600'
     )
     .add(
       {
-        targets: $.qsa('.main-list__content', list),
+        easing: 'cubicBezier(.31,0,0,1.01)',
+        targets: '.about__content',
         duration: 400,
-        delay: anime.stagger(50),
+        delay: anime.stagger(100),
+        translateY: ['3rem', '0rem'],
         opacity: [0, 1]
       },
-      '-=400'
+      '-=500'
     );
+
+  $.each('.main-list__content', (content, i) => {
+    anime({
+      easing: 'cubicBezier(.31,0,0,1.01)',
+      targets: content.children,
+      duration: 800,
+      delay: anime.stagger(50, { start: 100 * (i + 1) }),
+      opacity: [0, 1],
+      translateY: ['40vh', '0vh']
+    });
+  });
 };
 
 /* Hide */
 const hide = showNext => {
+  list.classList.remove('stroke-visible');
+
   anime({
     targets: el,
     duration: 800,

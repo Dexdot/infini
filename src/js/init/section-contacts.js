@@ -11,12 +11,24 @@ const el = $.qs('.section[data-section="contacts"]');
 
 // Show
 const show = resolve => {
-  resolve();
+  anime({
+    targets: el,
+    duration: 400,
+    opacity: [0, 1],
+    complete: resolve,
+    ...options
+  });
 };
 
 // Hide
-const hide = (showNext) => {
-  showNext();
+const hide = showNext => {
+  anime({
+    targets: el,
+    duration: 400,
+    opacity: [1, 0],
+    complete: showNext,
+    ...options
+  });
 };
 
 // Section instance

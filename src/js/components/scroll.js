@@ -39,7 +39,7 @@ export default class Scroll {
     );
 
     // Show first section
-    this.afterHide(this.index);
+    $.qs('.main-list').classList.add('stroke-visible')
 
     // Scroll handler
     this.scroll = new WheelIndicator({

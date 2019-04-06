@@ -22,10 +22,10 @@
 
 // Dark text color
 .header--dark
-  color: $base-text-color
+  color: $black
 
 .header--dark a
-  +link($base-text-color)
+  +link($black)
   
 
 // Logo
@@ -44,6 +44,13 @@
   z-index: unset
   +yo('padding-right', (1300px: 56px, 1920px: 80px))
   margin-right: $burger-w
+
+  .header__logo
+    position: relative
+    z-index: 1
+
+  .hamburger
+    color: #fff !important
 
   .header__list
     opacity: 0

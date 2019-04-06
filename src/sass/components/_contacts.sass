@@ -1,13 +1,32 @@
+// Namespace
+.page-contacts
+  .header__list
+    opacity: 0
+    pointer-events: none
+
+  .hamburger
+    color: $blue-b
+
+
+// Contacts
+.contacts
+  opacity: 0
+
+  
+// Inner
 .contacts .section-text__inner
   max-width: unset
   top: 55%
 
+
+// Title
 .contacts .section-text__title
   +yo('font-size', (1300px: 48px, 1920px: 64px))
   line-height: 1
   margin-bottom: 0.9em
 
 
+// Map
 .contacts .js-map
   background: $blue-r
 
@@ -28,10 +47,10 @@
   position: relative
   padding-top: 40px
   +yo('margin-bottom', (1300px: 32px, 1920px: 64px))
-  +yo('margin-left', (1300px: -32px, 1920px: -64px))
+  +yo('margin-left', (1300px: -16px, 1920px: -64px))
 
 .contacts__list > li
-  +yo('margin-left', (1300px: 32px, 1920px: 64px))
+  +yo('margin-left', (1300px: 16px, 1920px: 64px))
 
 
 // Inner list
