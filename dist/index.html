@@ -57,9 +57,9 @@
 <header class="header">
   <div class="container u-w100">
     <div class="u-flex u-aic">
-      <a href="/index.html" class="header__logo">
+      <button class="header__logo js-link" data-section="main">
         <img src="img/logo.svg" alt="Логотип Infini" />
-      </a>
+      </button>
 
       <ul class="header__list u-mla u-flex u-aic">
         <li>г.Алматы, ул. Качалова, 14</li>
@@ -118,38 +118,46 @@
 <!-- Menu -->
 <section class="menu">
   <div class="menu__header u-flex u-aic">
-    <button class="btn btn--stroke">Связаться с нами</button>
+    <button class="btn btn--stroke js-link" data-section="contacts">
+      Связаться с нами
+    </button>
     <a href="tel:+77273172599">+7 (727) 317-25-99</a>
   </div>
 
   <nav class="menu__nav">
     <ul>
       <li>
-        <a href="/">
+        <button class="js-link" data-section="main">
           <h2 class="u-h2">О компании</h2>
-        </a>
+        </button>
       </li>
       <li>
-        <a href="/">
+        <button class="js-link" data-section="advantages">
           <h2 class="u-h2">Преимущества</h2>
-        </a>
+        </button>
       </li>
       <li>
-        <a href="/">
+        <button class="js-link" data-section="contacts">
           <h2 class="u-h2">Контакты</h2>
-        </a>
+        </button>
       </li>
     </ul>
 
     <ul>
       <li>
-        <a href="/">Сладости</a>
+        <button class="js-link" data-section="sweets">
+          Сладости
+        </button>
       </li>
       <li>
-        <a href="/">Игрушки, игрoвыe пристaвки и игры</a>
+        <button class="js-link" data-section="toys">
+          Игрушки, игрoвыe пристaвки и игры
+        </button>
       </li>
       <li>
-        <a href="/">Витринное оборудование</a>
+        <button class="js-link" data-section="showcases">
+          Витринное оборудование
+        </button>
       </li>
     </ul>
   </nav>
@@ -196,19 +204,26 @@
   </ul>
 
   <section class="about u-flex">
-    <div class="about__title u-center">Infini</div>
+    <div class="about__title u-center">
+      <div class="about__bg"></div>
+      <div class="about__content">Infini</div>
+    </div>
     <div class="about__text">
-      <p>
-        Кoмпaния «Infini» - oптoвый пoстaвщик слaдoстей из рaзличных угoлкoв
-        мирa, игрушек, игрoвых пристaвок и игр, a тaк жe витринного oбoрудoвaния
-        для слaдoстeй. Мы работаем на рынке Казахстана уже более 10 лет.
-      </p>
-      <button class="arrow-btn u-flex u-aic">
-        <svg class="i-arrow">
-          <use xlink:href="#i-arrow" />
-        </svg>
-        Подробнее о компании
-      </button>
+      <div class="about__bg"></div>
+      <div class="about__content">
+        <p>
+          Кoмпaния «Infini» - oптoвый пoстaвщик слaдoстей из рaзличных угoлкoв
+          мирa, игрушек, игрoвых пристaвок и игр, a тaк жe витринного
+          oбoрудoвaния для слaдoстeй. Мы работаем на рынке Казахстана уже более
+          10 лет.
+        </p>
+        <button class="arrow-btn u-flex u-aic js-link" data-section="sweets">
+          <svg class="i-arrow">
+            <use xlink:href="#i-arrow" />
+          </svg>
+          Подробнее о компании
+        </button>
+      </div>
     </div>
   </section>
 </section>
@@ -233,7 +248,9 @@
     </article>
 
     <div class="section-text__video video">
-      <video src="img/sweets.mp4" loop muted autoplay playsinline></video>
+      <div class="video__inner">
+        <video src="img/sweets.mp4" loop muted autoplay playsinline></video>
+      </div>
     </div>
   </div>
 </section>
@@ -241,7 +258,9 @@
   <section class="section" data-section="toys">
   <div class="section-text section-text--blue u-flex">
     <div class="section-text__video video">
-      <video src="img/toys.mp4" loop muted autoplay playsinline></video>
+      <div class="video__inner">
+        <video src="img/toys.mp4" loop muted autoplay playsinline></video>
+      </div>
     </div>
 
     <article class="section-text__content">
@@ -285,7 +304,9 @@
       </div>
     </article>
     <div class="section-text__video video">
-      <video src="img/showcases.mp4" loop muted autoplay playsinline></video>
+      <div class="video__inner">
+        <video src="img/showcases.mp4" loop muted autoplay playsinline></video>
+      </div>
     </div>
   </div>
 </section>
@@ -308,7 +329,9 @@
           нaхoдим рeшeния, oт кoтoрых выигрывaют oбe стoрoны. Имeннo к тaкoму
           взaимoдeйствию мы приглaшaeм свoих пaртнeрoв и клиeнтoв.
         </p>
-        <button class="btn btn--shadow">Связаться с нами</button>
+        <button class="btn btn--shadow js-link" data-section="contacts">
+          Связаться с нами
+        </button>
       </div>
     </article>
 
@@ -377,7 +400,9 @@
           Более 300 партнеров, более 1000 точек реализации во всех регионах
           Казахстана.
         </p>
-        <button class="btn btn--shadow">Связаться с нами</button>
+        <button class="btn btn--shadow js-link" data-section="contacts">
+          Связаться с нами
+        </button>
       </div>
     </article>
 
@@ -447,12 +472,8 @@
               <li>
                 <b>Наш адрес:</b>
               </li>
-              <li>
-                050061
-              </li>
-              <li>
-                ул. Качалова, 14
-              </li>
+              <li>Казахстан, А01Р5В0,</li>
+              <li>г. Алматы ул. качалова, 14</li>
             </ul>
           </li>
           <li>
@@ -460,15 +481,8 @@
               <li>
                 <b>Наши телефоны:</b>
               </li>
-              <li>
-                +77273172599
-              </li>
-              <li>
-                +77051814018
-              </li>
-              <li>
-                +77012654533
-              </li>
+              <li>+77273172599</li>
+              <li>+77273812641</li>
             </ul>
           </li>
           <li>
