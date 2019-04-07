@@ -61,7 +61,7 @@
 
 // Content
 .main-list__content
-  padding-top: 16%
+  +yo('padding-top', (1300px: 48px, 1920px: 104px))
   padding-left: $unit
   padding-right: $unit
 
@@ -72,13 +72,27 @@
   
 
 // Image
-.main-list__content img
+.main-list__btn img
+  display: block
+  max-width: 100%
+  width: 90%
+  height: auto
+
+  transition: 0.6s ease
+
+  @media (max-width: 1440px)
+    width: 80%
+
+
+// Button
+.main-list__btn
   margin-top: auto
   margin-left: auto
   margin-right: auto
 
   display: block
-  max-width: 100%
-  width: 90%
-  height: auto
+  width: 100%
+
+  &:hover img
+    transform: scale(1.05)
 

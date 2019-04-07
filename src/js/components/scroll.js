@@ -23,21 +23,25 @@ export default class Scroll {
       clients,
       contacts
     ];
-
-    this.index = 0;
+    
     this.animating = false;
 
     this.setup();
   }
 
   setup() {
-    // Set body class
-    $.qs('body').classList.add(
-      `page-${this.sections[this.index].el.dataset.section}`
-    );
+    window.addEventListener('load', () => {
+      const { hash } = window.location;
 
-    // Show first section
-    $.qs('.main-list').classList.add('stroke-visible')
+      // Show section in hash
+      if (hash) {
+        const index = this.DOM.sections.indexOf($.qs(`.section[data-section=${hash.slice(1)}]`));
+        
+        this.afterHide(index);
+      } else {
+        this.afterHide(0);
+      }
+    });
 
     // Scroll handler
     this.scroll = new WheelIndicator({
@@ -60,25 +64,13 @@ export default class Scroll {
 
   afterHide(i) {
     this.index = i;
+
+    const sectionName = this.sections[this.index].el.dataset.section;
     $.removeClassStartingWith($.qs('body'), 'page-');
-    $.qs('body').classList.add(
-      `page-${this.sections[this.index].el.dataset.section}`
-    );
+    $.qs('body').classList.add(`page-${sectionName}`);
+    window.history.pushState(null, null, `#${sectionName}`);
+
     this.show();
-  }
-
-  prev() {
-    this.animating = true;
-    this.hide(() => {
-      this.afterHide(this.index - 1);
-    });
-  }
-
-  next() {
-    this.animating = true;
-    this.hide(() => {
-      this.afterHide(this.index + 1);
-    });
   }
 
   showByIndex(i) {
@@ -95,15 +87,15 @@ export default class Scroll {
   onScroll(e) {
     const map = $.qs('.js-map');
     const path = e.path || (e.composedPath && e.composedPath());
-    
+
     if (path.indexOf(map) > 0 || this.animating) return false;
 
     if (e.direction === 'up' && this.index > 0) {
-      this.prev();
+      this.showByIndex(this.index - 1);
     }
 
     if (e.direction === 'down' && this.index !== this.DOM.sections.length - 1) {
-      this.next();
+      this.showByIndex(this.index + 1);
     }
   }
 }

@@ -1,0 +1,54 @@
+.nav
+  z-index: 1
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+
+  height: 100%
+  width: 96px
+  
+  border-left-color: rgba(#fff, 0.1)
+  border-left-style: solid
+  border-left-width: 1px
+  transition: $trs
+
+.nav li:not(:last-child)
+  margin-bottom: 32px
+
+.nav button
+  transition: $trs
+  opacity: 0.3
+  background: #fff
+  border-radius: 50%
+
+  display: block
+  width: 6px
+  height: 6px
+
+.nav button.active
+  opacity: 1
+
+
+// Main
+.page-main
+  .nav
+    @media (max-width: 1800px)
+      border-left-color: rgba(#fff, 0)
+
+
+// Toys, Advantages
+.page-toys,
+.page-advantages
+  .nav
+    border-left-color: rgba(#000, 0.1)
+  .nav button
+    background: $black
+
+
+// Contacts
+.page-contacts
+  .nav
+    border-left-color: rgba(#000, 0)
+  .nav button
+    background: $blue-b

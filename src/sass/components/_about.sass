@@ -11,6 +11,12 @@
   font-size: 16px
   line-height: 1.5
 
+  @media (max-width: 1600px)
+    max-width: 960px
+
+  @media (max-width: 1440px)
+    font-size: 14px
+
 
 .about__bg
   position: absolute
@@ -27,6 +33,10 @@
   position: relative
   z-index: 1
 
+.about__content .arrow-btn
+  @media (max-height: 840px)
+    display: none
+
 
 .about__title
   position: relative
@@ -35,8 +45,8 @@
   +obj(b)
   +yo('font-size', (1300px: 48px, 1920px: 64px, 2550px: 72px))
 
-  .about__bg
-    background: $blue-m
+.about__title .about__bg
+  background: $blue-m
 
 .about__text
   position: relative
@@ -44,9 +54,13 @@
   width: 65%
   padding: 5% 6.7%
 
-  .about__bg
-    background: $blue-b
+  @media (max-width: 1600px)
+    padding: 40px 40px 40px 72px
+
+.about__text .about__bg
+  background: $blue-b
 
 .about__text p
-  margin-bottom: 24px
+  @media (min-height: 841px)
+    margin-bottom: 24px
 

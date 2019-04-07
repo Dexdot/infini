@@ -81,3 +81,23 @@
   margin-bottom: 2em
 
 
+// Expanded menu
+.menu-expanded
+  z-index: unset
+  +yo('padding-right', (1300px: 56px, 1920px: 80px))
+  margin-right: $burger-w
+
+  .header__logo
+    position: relative
+    z-index: 1
+
+  .header__list
+    opacity: 0
+    pointer-events: none
+
+  .hamburger
+    color: #fff !important
+
+  .nav
+    opacity: 0
+    pointer-events: none

@@ -12,6 +12,20 @@
     pointer-events: auto
 
 
+// Main
+.section[data-section="main"]
+  .cover,
+  .about__bg
+    transform: translateY(101%)
+  .about__content
+    transform: translateY(3rem)
+    opacity: 0
+
+  .main-list__content > *
+    opacity: 0
+    transform: translateY(40vh)
+
+
 // Sweets, Toys, Showcases
 .section[data-section="sweets"],
 .section[data-section="toys"],
