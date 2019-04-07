@@ -66,9 +66,18 @@ export default class Scroll {
     this.index = i;
 
     const sectionName = this.sections[this.index].el.dataset.section;
+    
+    // Body class
     $.removeClassStartingWith($.qs('body'), 'page-');
     $.qs('body').classList.add(`page-${sectionName}`);
+
+    // Link hash
     window.history.pushState(null, null, `#${sectionName}`);
+
+    // Active nav
+    const activeNavLink = $.qs('.nav button.active')
+    if (activeNavLink) activeNavLink.classList.remove('active')
+    $.qs(`.nav button[data-section="${sectionName}"]`).classList.add('active');
 
     this.show();
   }
