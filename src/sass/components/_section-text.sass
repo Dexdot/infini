@@ -6,6 +6,14 @@
   width: 100%
   height: 100%
 
+  @media (max-width: $tablet)
+    position: static
+    height: auto
+
+  @media (max-width: 800px)
+    flex-direction: column
+
+
 .section-text--pink
   .i-draw-arrow
     color: $pink
@@ -31,6 +39,9 @@
   flex: 1
   height: 100%
 
+  @media (max-width: $tablet)
+    height: auto
+
 
 // Inner
 .section-text__inner
@@ -40,11 +51,27 @@
   left: 8.3vw
   transform: translate(0, -50%)
 
+  @media (max-width: $tablet)
+    position: static
+    transform: translate(0, 0)
+
+    max-width: 90% 
+    padding: $unit $unit
+
+  @media (max-width: 800px)
+    max-width: 100% 
+
+  @media (max-width: 500px)
+    padding: calc(#{$unit} + #{32px}) $unit
+
 
 // Num
 .section-text__num
   display: block
   margin-bottom: 16px
+
+  @media (max-width: 800px)
+    margin-bottom: 8px
 
 
 // Title
@@ -60,6 +87,8 @@
 
 // Button
 .section-text__btn
+  display: inline-flex
+
   svg
     margin-right: 24px
   img
@@ -77,10 +106,21 @@
     min-width: 50%
     width: 50%
 
+  @media (max-width: 800px)
+    order: -1
+    width: 100%
+
 
 // Image
 .section-text__img
   overflow: hidden
   min-width: 40%
   width: 40%
+
+  @media (max-width: $tablet)
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    width: 100%
 

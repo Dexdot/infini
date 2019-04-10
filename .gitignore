@@ -11,5 +11,9 @@ Thumbs.db
 yarn.lock
 npm-debug.log*
 
+form.php
+src/form.php
+dist/form.php
+
 *.mp4
 **/*.mp4

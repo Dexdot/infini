@@ -12,14 +12,11 @@
     pointer-events: auto
 
   @media (max-width: $tablet)
+    overflow-x: hidden
     position: static
     pointer-events: auto
     width: auto
     height: auto
-
-
-.section:not(:nth-child(1))
-  display: none
 
 
 // Main
@@ -28,8 +25,7 @@
     position: relative
   @media (max-width: 950px)
     background: $blue-s
-
-    
+   
 .section[data-section="main"]
   .cover,
   .about__bg
@@ -44,6 +40,13 @@
     @media (min-width: 1201px)
       opacity: 0
       transform: translateY(40vh)
+
+
+// Showcases
+.section[data-section="showcases"]
+  .section-text__inner p
+    @media (max-width: 800px)
+      margin-bottom: 0
 
 
 // Sweets, Toys, Showcases
@@ -76,6 +79,10 @@
     @media (min-width: 1201px)
       transform: scale(1.5)
 
+  .section-text__content
+    @media (max-width: $tablet)
+      order: -1
+
   .section-text__inner > *
     @media (min-width: 1201px)
       opacity: 0
@@ -84,12 +91,27 @@
 
 // Advantages
 .section[data-section="advantages"]
+  @media (max-width: $tablet)
+    position: relative
+
   .img
     @media (min-width: 1201px)
       transform: translateX(-101%)
 
   .img__i
     transform-origin: 0% 50%
+
+  .section-text
+    @media (max-width: $tablet)
+      flex-direction: column
+
+  .section-text__content
+    @media (max-width: $tablet)
+      margin-bottom: 16vw
+
+  .section-text__img
+    @media (max-width: $tablet)
+      top: var(--adv-text-h)
 
   .section-text__inner
     left: 38%
@@ -108,12 +130,27 @@
 
 // Clients
 .section[data-section="clients"]
+  @media (max-width: $tablet)
+    padding-top: $unit
+    padding-bottom: $unit
+
+  @media (max-width: 800px)
+    padding-top: 40px
+    padding-bottom: 40px
+
   .img
     @media (min-width: 1201px)
       transform: translateX(101%)
 
   .img__i
     transform-origin: 100% 50%
+
+  .cell
+    @media (max-width: 800px)
+      height: 80px
+      padding-bottom: 0
+      display: flex
+      align-items: center
 
   .cells
     box-shadow: 0px 8px 16px rgba(0, 40, 133, 0)
@@ -127,12 +164,26 @@
       border-color: rgba(#858585, 0.15)
 
     @media (max-width: $tablet)
-        border-width: 1px 0 0 1px
-        border-style: solid
-        border-color: rgba(#858585, 0.15)
+      border-width: 1px 0 0 1px
+      border-style: solid
+      border-color: rgba(#858585, 0.15)
+      width: 60%
+      margin-right: $unit
+
+    @media (max-width: 800px)
+      box-shadow: 0px 8px 16px rgba(0, 40, 133, 0.16)
+      width: calc(#{100%} - #{$unit} * 2)
+      margin: 0 auto
 
   .cell__content
     top: 25%
 
-  
+    @media (max-width: 800px)
+      position: static
+      transform: translate(0, 0)
+      padding-left: 24px
+
+  .section-text__img
+    @media (max-width: $tablet)
+      display: none
 

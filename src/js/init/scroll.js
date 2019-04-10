@@ -10,6 +10,28 @@ const hideMenu = () => {
   body.classList.remove('menu-expanded');
 };
 
+const goTo = (ctx, scroll) => {
+  const section = $.qs(`.section[data-section=${ctx.dataset.section}]`);
+  scroll.showByIndex($.nodeIndex(section));
+
+  if ($.qs('.menu').classList.contains('active')) {
+    hideMenu();
+  }
+};
+
+const scrollTo = ctx => {
+  const section = $.qs(`.section[data-section=${ctx.dataset.section}]`);
+
+  window.scrollTo({
+    top: section.offsetTop,
+    behavior: 'smooth'
+  });
+
+  if ($.qs('.menu').classList.contains('active')) {
+    hideMenu();
+  }
+};
+
 // Start
 window.addEventListener('DOMContentLoaded', () => {
   // Init scroll component
@@ -17,11 +39,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // On button click
   $.listen('.js-link', 'click', function onLinkClick() {
-    const section = $.qs(`.section[data-section=${this.dataset.section}]`);
-    scroll.showByIndex($.nodeIndex(section));
-
-    if ($.qs('.menu').classList.contains('active')) {
-      hideMenu();
+    if (window.innerWidth > 1200) {
+      goTo(this, scroll);
+    } else {
+      scrollTo(this);
     }
   });
 });

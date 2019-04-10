@@ -63,11 +63,25 @@ export default class Scroll {
 
     // Show section in hash
     if (hash) {
-      const index = this.DOM.sections.indexOf(
-        $.qs(`.section[data-section=${hash.slice(1)}]`)
-      );
+      const lowerHash = hash.slice(1).toLowerCase();
 
-      this.afterHide(index);
+      if (
+        !lowerHash.match(
+          /^([A-Za-z\u00C0-\u00D6\u00D8-\u00f6\u00f8-\u00ff\s]*)$/
+        )
+      ) {
+        this.afterHide(0);
+        return false;
+      }
+
+      const section = $.qs(`.section[data-section=${lowerHash}]`);
+
+      if (section) {
+        const index = this.DOM.sections.indexOf(section);
+        this.afterHide(index);
+      } else {
+        this.afterHide(0);
+      }
     } else {
       this.afterHide(0);
     }

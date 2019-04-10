@@ -24,6 +24,11 @@
               </li>
               <li>Казахстан, А01Р5В0,</li>
               <li>г. Алматы ул. качалова, 14</li>
+              <li class="map-link">
+                <a href="https://goo.gl/maps/iwe9HXbtrNA2" target="_blank">
+                  Показать на карте
+                </a>
+              </li>
             </ul>
           </li>
           <li>
@@ -31,7 +36,7 @@
               <li>
                 <b>Наши телефоны:</b>
               </li>
-              <li>+77273172599</li>
+              <li class="whatsapp">+77273172599</li>
               <li>+77273812641</li>
             </ul>
           </li>
@@ -51,10 +56,11 @@
         </ul>
 
         <h2 class="contacts__subtitle">Свяжитесь с нами</h2>
-        <form class="contacts__form">
+        <form class="contacts__form" action="form.php" method="POST">
           <div class="u-flex">
             <div class="u-flex u-flex-col">
               <input
+                name="form_name"
                 type="text"
                 class="input"
                 required
@@ -62,6 +68,7 @@
                 placeholder="Имя"
               />
               <input
+                name="form_email"
                 type="email"
                 class="input"
                 required
@@ -69,14 +76,16 @@
                 placeholder="E-mail"
               />
               <input
+                name="form_phone"
                 type="tel"
-                class="input"
+                class="input js-mask"
                 required
                 minlength="6"
                 placeholder="Телефон"
               />
             </div>
             <textarea
+              name="form_msg"
               class="input"
               required
               minlength="2"

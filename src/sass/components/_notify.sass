@@ -1,0 +1,69 @@
+// Notify
+.notify
+  z-index: 4
+  position: fixed
+  top: 8%
+  right: $unit
+
+  transition: $trs-4
+  transform: translateX(100%)
+  opacity: 0
+  pointer-events: none
+
+.notify.active
+  opacity: 1
+  transform: translateX(0)
+
+
+// Container
+.notify__container  
+  position: relative
+
+  padding: 16px
+  min-width: 220px
+  max-width: 320px
+
+  @media (max-width: 500px)
+    max-width: calc(#{100vw} - (#{$unit} * 2))
+
+  color: #fff
+  background: rgba(#000, 0.4)
+  border-radius: 8px
+
+  transition: background $trs
+  &:hover
+    background: rgba(#000, 0.6)
+
+
+// Content
+.notify__content
+  position: relative
+
+
+// Info
+.notify__info
+  display: flex
+  flex-direction: column
+  padding-left: 16px
+  padding-right: 40px
+
+
+// Typo
+.notify__label
+  font-size: 10px
+  letter-spacing: 0.1em
+  text-transform: uppercase
+
+  margin-bottom: 4px
+  
+.notify--success .notify__label
+  color: #4bea92
+.notify--error .notify__label
+  color: red
+  
+
+.notify__title
+  +obj(r)
+  font-size: 14px
+  line-height: 1.4
+  letter-spacing: 0.02em

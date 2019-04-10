@@ -15,4 +15,6 @@ import '@/init/css-props';
 import '@/init/menu';
 import '@/init/scroll';
 import '@/init/scroll-booster';
+import '@/init/notify';
+import '@/init/submit';
 import '@/init/map';
