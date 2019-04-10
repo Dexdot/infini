@@ -1,6 +1,6 @@
 .header
   position: relative
-  z-index: 2
+  z-index: 3  
 
   +yo('padding-top', (1300px: 16px, 1920px: 24px))
   +yo('padding-bottom', (1300px: 16px, 1920px: 24px))
@@ -8,10 +8,17 @@
   +obj(m)
   +base-text(true)
 
+  @media (max-width: 500px)
+    min-height: 72px
+    height: 72px
+
 
 // Container
 .header .container
   padding-right: 32px
+
+  @media (max-width: 1200px)
+    padding-right: $unit
   
 
 // Text color
@@ -37,6 +44,10 @@
     width: 144px
     height: 48px
 
+  @media (max-width: 500px)
+    width: 120px
+    height: 40px
+
 .header__logo img
   display: block
   max-width: 100%
@@ -45,17 +56,36 @@
 .header .hamburger
   +yo('margin-left', (1300px: 56px, 1920px: 80px))
 
+  @media (max-width: 1000px)
+    margin-left: 32px
+
 .header .hamburger.active
-  z-index: 2
+  z-index: 3
   position: fixed
-  top: 32px
+  +yo('top', (1300px: 20px, 1920px: 32px))
   right: 32px
+
+  @media (max-width: $tablet)
+    right: $unit
 
 
 // List
 .header__list
-  transition: $trs-4
+  @media (max-width: 1000px)
+    display: none
 
 .header__list li
   margin-left: 48px
 
+
+// Phone
+.header__phone
+  +link(#fff)
+
+  margin-left: auto
+  display: none
+
+  @media (max-width: 1000px)
+    display: flex
+    align-items: center
+    justify-content: center

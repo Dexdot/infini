@@ -11,19 +11,39 @@
   &.active
     pointer-events: auto
 
+  @media (max-width: $tablet)
+    position: static
+    pointer-events: auto
+    width: auto
+    height: auto
+
+
+.section:not(:nth-child(1))
+  display: none
+
 
 // Main
 .section[data-section="main"]
+  @media (max-width: 1200px)
+    position: relative
+  @media (max-width: 950px)
+    background: $blue-s
+
+    
+.section[data-section="main"]
   .cover,
   .about__bg
-    transform: translateY(101%)
+    @media (min-width: 1201px)
+      transform: translateY(101%)
   .about__content
-    transform: translateY(3rem)
-    opacity: 0
+    @media (min-width: 1201px)
+      transform: translateY(3rem)
+      opacity: 0
 
   .main-list__content > *
-    opacity: 0
-    transform: translateY(40vh)
+    @media (min-width: 1201px)
+      opacity: 0
+      transform: translateY(40vh)
 
 
 // Sweets, Toys, Showcases
@@ -31,35 +51,42 @@
 .section[data-section="toys"],
 .section[data-section="showcases"]
   .section-text__inner > *
-    opacity: 0
-    transform: translateY(64px)
+    @media (min-width: 1201px)
+      opacity: 0
+      transform: translateY(64px)
 
   .video
-    transform: translateY(101%)
+    @media (min-width: 1201px)
+      transform: translateY(101%)
 
   .video video
-    transform: translateY(20%)
-    opacity: 0
+    @media (min-width: 1201px)
+      transform: translateY(20%)
+      opacity: 0
 
 
 // Advantages, Clients
 .section[data-section="advantages"],
 .section[data-section="clients"]
   .cell
-    opacity: 0
+    @media (min-width: 1201px)
+      opacity: 0
 
   .img__i
-    transform: scale(1.5)
+    @media (min-width: 1201px)
+      transform: scale(1.5)
 
   .section-text__inner > *
-    opacity: 0
-    transform: translateY(64px)
+    @media (min-width: 1201px)
+      opacity: 0
+      transform: translateY(64px)
 
 
 // Advantages
 .section[data-section="advantages"]
   .img
-    transform: translateX(-101%)
+    @media (min-width: 1201px)
+      transform: translateX(-101%)
 
   .img__i
     transform-origin: 0% 50%
@@ -67,14 +94,23 @@
   .section-text__inner
     left: 38%
 
+    @media (max-width: 1300px)
+      left: 32%
+
+  .cells
+    @media (max-width: $tablet)
+      box-shadow: 0px 8px 16px rgba(0, 40, 133, 0.16)
+
   .cells.visible
-    box-shadow: 0px 8px 16px rgba(0, 40, 133, 0.16)
+    @media (min-width: 1201px)
+      box-shadow: 0px 8px 16px rgba(0, 40, 133, 0.16)
   
 
 // Clients
 .section[data-section="clients"]
   .img
-    transform: translateX(101%)
+    @media (min-width: 1201px)
+      transform: translateX(101%)
 
   .img__i
     transform-origin: 100% 50%
@@ -89,6 +125,11 @@
       border-width: 1px 0 0 1px
       border-style: solid
       border-color: rgba(#858585, 0.15)
+
+    @media (max-width: $tablet)
+        border-width: 1px 0 0 1px
+        border-style: solid
+        border-color: rgba(#858585, 0.15)
 
   .cell__content
     top: 25%

@@ -17,6 +17,13 @@
   @media (max-width: 1440px)
     font-size: 14px
 
+  @media (max-width: $tablet)
+    position: static
+
+  @media (max-width: 950px)
+    max-width: unset
+    width: 100%
+
 
 .about__bg
   position: absolute
@@ -33,9 +40,13 @@
   position: relative
   z-index: 1
 
+  @media (max-width: 950px)
+    max-width: 40em
+
 .about__content .arrow-btn
-  @media (max-height: 840px)
-    display: none
+  display: none
+  // @media (max-height: 840px)
+  //   display: none
 
 
 .about__title
@@ -44,6 +55,9 @@
   width: 35%
   +obj(b)
   +yo('font-size', (1300px: 48px, 1920px: 64px, 2550px: 72px))
+
+  @media (max-width: $tablet)
+    display: none
 
 .about__title .about__bg
   background: $blue-m
@@ -57,10 +71,17 @@
   @media (max-width: 1600px)
     padding: 40px 40px 40px 72px
 
+  @media (max-width: 950px)
+    padding: $unit
+    width: 100%
+
+  @media (max-width: 500px)
+    padding: 40px $unit
+
 .about__text .about__bg
   background: $blue-b
 
-.about__text p
-  @media (min-height: 841px)
-    margin-bottom: 24px
+// .about__text p
+//   @media (min-height: 841px)
+//     margin-bottom: 24px
 

@@ -5,6 +5,13 @@
 
   color: #fff
 
+  @media (max-width: $tablet)
+    padding-top: 0
+
+  @media (max-width: 950px)
+    cursor: move
+    background: $blue-s
+
 .main-list:not(.stroke-visible) li
   border-top: 1px solid transparent
   &::before
@@ -15,6 +22,14 @@
   &::before
     opacity: 1
 
+.main-list li:not(.stroke-visible)
+  @media (max-width: $tablet)
+    border-top: 1px solid $blue-m
+
+.main-list li:not(.stroke-visible)::before
+  @media (max-width: $tablet)
+      opacity: 1
+
 
 // List item
 .main-list li
@@ -24,6 +39,10 @@
   height: 100%
 
   transition: $trs
+
+  @media (max-width: $tablet)
+    min-width: 316px
+    height: auto
 
 
 // Border
@@ -47,6 +66,9 @@
   margin-top: calc(-1 * #{$header-h})
   height: calc(100% + #{$header-h})
 
+  @media (max-width: 950px)
+    display: none
+
 
 // Num
 .main-list__num
@@ -57,6 +79,9 @@
 // Title
 .main-list__title
   margin-bottom: 1em
+
+  @media (max-width: $tablet)
+    margin-bottom: 2em
 
 
 // Content
@@ -69,6 +94,11 @@
   display: flex
   flex-direction: column
   align-items: flex-start
+
+  @media (max-width: $tablet)
+    padding-bottom: $unit
+    display: block
+    height: auto
   
 
 // Image
@@ -83,6 +113,8 @@
   @media (max-width: 1440px)
     width: 80%
 
+  @media (max-width: $tablet)
+    width: 70%
 
 // Button
 .main-list__btn
@@ -95,4 +127,8 @@
 
   &:hover img
     transform: scale(1.05)
+
+  @media (max-width: $tablet)
+    margin-top: 0
+    pointer-events: none
 

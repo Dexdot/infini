@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "animejs": "^3.0.1",
+    "scrollbooster": "^1.1.0",
     "wheel-indicator": "^1.2.1"
   }
 }

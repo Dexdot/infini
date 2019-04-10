@@ -1,11 +1,12 @@
 .menu
-  z-index: 1
+  z-index: 2
   position: fixed
   top: 0
   right: 0
 
   padding: 26px $unit
   width: 33.3333vw
+  min-width: 316px
   +vh
 
   background: $blue-b
@@ -14,6 +15,9 @@
   pointer-events: none
 
   color: #fff
+
+  @media (max-width: 500px)
+    width: 100%
 
 
 // Active state
@@ -38,9 +42,21 @@
 // Button
 .menu .btn
   +yo('margin-right', (1600px: 0px, 1601px: 16px, 1920px: 40px))
+
   @media (max-width: 1600px)
     margin-bottom: 16px
 
+  @media (max-width: 1200px)
+    position: absolute
+    bottom: $unit
+    left: $unit
+    right: $unit
+
+    width: calc(#{100%} - #{$unit} * 2)
+    margin-bottom: 0
+
+  @media (max-width: 500px)
+    bottom: 40px
 
 // Phone
 .menu .btn + a
@@ -48,10 +64,15 @@
   +base-text(true)
   opacity: 0.7
 
+  @media (max-width: 1000px)
+    display: none
+
 
 // Nav
 .menu__nav
   line-height: 1
+.menu__nav button
+  text-align: left
 
 
 // First list
@@ -71,14 +92,22 @@
   padding-bottom: 48px
   margin-bottom: 48px
 
+  @media (max-width: 500px)
+    padding-bottom: 32px
+    margin-bottom: 32px
+
 .menu__nav ul:nth-child(1) li:not(:last-child)
   margin-bottom: 1.6em
+  @media (max-width: 500px)
+    margin-bottom: 16px
 
 .menu__nav ul:nth-child(2)
   opacity: 0.8
 
 .menu__nav ul:nth-child(2) li:not(:last-child)
   margin-bottom: 2em
+  @media (max-width: 500px)
+    margin-bottom: 24px
 
 
 // Expanded menu
@@ -87,16 +116,34 @@
   +yo('padding-right', (1300px: 56px, 1920px: 80px))
   margin-right: $burger-w
 
+  @media (max-width: 1200px)
+    padding-right: 0
+
+  .header .container
+    margin-left: 0
+    width: 64vw
+
+    @media (max-width: 1000px)
+      width: 50vw
+
   .header__logo
     position: relative
     z-index: 1
+    @media (max-width: 500px)
+      opacity: 0
+      pointer-events: none
 
   .header__list
-    opacity: 0
-    pointer-events: none
+    display: none
 
   .hamburger
     color: #fff !important
+
+  .header__phone
+    z-index: 3
+    position: fixed
+    top: 32px
+    right: calc(#{$unit} + #{72px})
 
   .nav
     opacity: 0

@@ -23,23 +23,25 @@ export default class Scroll {
       clients,
       contacts
     ];
-    
+
     this.animating = false;
+    this.inited = false;
 
     this.setup();
   }
 
   setup() {
-    window.addEventListener('load', () => {
-      const { hash } = window.location;
+    const width = window.innerWidth;
 
-      // Show section in hash
-      if (hash) {
-        const index = this.DOM.sections.indexOf($.qs(`.section[data-section=${hash.slice(1)}]`));
-        
-        this.afterHide(index);
-      } else {
-        this.afterHide(0);
+    window.addEventListener('load', () => {
+      if (window.innerWidth <= 1200) return false;
+
+      this.init();
+    });
+
+    window.addEventListener('resize', () => {
+      if (width <= 1200 && window.innerWidth > 1200) {
+        this.init();
       }
     });
 
@@ -47,9 +49,28 @@ export default class Scroll {
     this.scroll = new WheelIndicator({
       elem: $.qs('body'),
       callback: e => {
-        this.onScroll(e);
+        if (window.innerWidth > 1200) this.onScroll(e);
       }
     });
+  }
+
+  init() {
+    if (this.inited) return false;
+
+    this.inited = true;
+
+    const { hash } = window.location;
+
+    // Show section in hash
+    if (hash) {
+      const index = this.DOM.sections.indexOf(
+        $.qs(`.section[data-section=${hash.slice(1)}]`)
+      );
+
+      this.afterHide(index);
+    } else {
+      this.afterHide(0);
+    }
   }
 
   hide(showNext) {
@@ -66,7 +87,7 @@ export default class Scroll {
     this.index = i;
 
     const sectionName = this.sections[this.index].el.dataset.section;
-    
+
     // Body class
     $.removeClassStartingWith($.qs('body'), 'page-');
     $.qs('body').classList.add(`page-${sectionName}`);
@@ -75,8 +96,8 @@ export default class Scroll {
     window.history.pushState(null, null, `#${sectionName}`);
 
     // Active nav
-    const activeNavLink = $.qs('.nav button.active')
-    if (activeNavLink) activeNavLink.classList.remove('active')
+    const activeNavLink = $.qs('.nav button.active');
+    if (activeNavLink) activeNavLink.classList.remove('active');
     $.qs(`.nav button[data-section="${sectionName}"]`).classList.add('active');
 
     this.show();

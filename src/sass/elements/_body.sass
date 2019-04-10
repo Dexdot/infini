@@ -7,7 +7,27 @@ body
   +base-text
   line-height: $base-lh
   color: $base-text-color
+
+  @media (max-width: $tablet)
+    overflow: unset
+    overflow-x: hidden
   
+body::before
+  z-index: -1
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  
+  width: 100%
+  height: $header-h
+  display: none
+
+  background: $blue-s
+
+  @media (max-width: 950px)
+    display: block
+
 
 html.no-scroll body
   overflow: hidden
