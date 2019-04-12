@@ -2,7 +2,14 @@
   <div class="section-text section-text--blue u-flex">
     <div class="section-text__video video">
       <div class="video__inner">
-        <video src="img/toys.mp4" loop muted autoplay playsinline></video>
+        <video loop muted autoplay playsinline>
+          <source
+            src="img/toys-mob.mp4"
+            type="video/mp4"
+            media="all and (max-width: 500px)"
+          />
+          <source src="img/toys.mp4" type="video/mp4" />
+        </video>
       </div>
     </div>
 
