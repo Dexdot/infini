@@ -23,14 +23,13 @@
 
     <div class="section-text__video video">
       <div class="video__inner">
-        <video loop muted autoplay playsinline>
-          <source
-            src="img/sweets-mob.mp4"
-            type="video/mp4"
-            media="all and (max-width: 500px)"
-          />
-          <source src="img/sweets.mp4" type="video/mp4" />
-        </video>
+        <video
+          srcset="img/sweets-mob.mp4 500w, img/sweets.mp4 900w"
+          loop
+          muted
+          autoplay
+          playsinline
+        ></video>
       </div>
     </div>
   </div>

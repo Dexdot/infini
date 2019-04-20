@@ -11,6 +11,7 @@ var msgStyles = [
 ];
 window.console.log.apply(console, msgStyles);
 
+import '@/init/video';
 import '@/init/css-props';
 import '@/init/menu';
 import '@/init/scroll';
